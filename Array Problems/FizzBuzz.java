@@ -34,19 +34,15 @@ public class FizzBuzz {
     public static String[] fizzBuzz(int start, int end) {
         String[] fizzBuzzArr = new String[end - start];
 
-        int currentNum = start;
-        for (int i = 0; i < fizzBuzzArr.length; i++) {
-            if (currentNum % 3 == 0 && currentNum % 5 == 0) {
-                fizzBuzzArr[i] = "FizzBuzz";
-            } else if (currentNum % 5 == 0) {
-                fizzBuzzArr[i] = "Buzz";
-            } else if (currentNum % 3 == 0) {
+        for (int i = 0, currentNum = start; i < fizzBuzzArr.length; i++, currentNum++) {
+            fizzBuzzArr[i] = String.valueOf(currentNum);
+            if (currentNum % 3 == 0) {
                 fizzBuzzArr[i] = "Fizz";
-            } else {
-                fizzBuzzArr[i] = String.valueOf(currentNum);
             }
-
-            currentNum += 1;
+            if (currentNum % 5 == 0) {
+                fizzBuzzArr[i] = fizzBuzzArr[i] == null ?
+                                 "Buzz" : "FizzBuzz";
+            }
         }
 
         return fizzBuzzArr;
