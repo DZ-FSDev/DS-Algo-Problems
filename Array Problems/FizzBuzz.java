@@ -35,13 +35,15 @@ public class FizzBuzz {
         String[] fizzBuzzArr = new String[end - start];
 
         for (int i = 0, currentNum = start; i < fizzBuzzArr.length; i++, currentNum++) {
-            fizzBuzzArr[i] = String.valueOf(currentNum);
             if (currentNum % 3 == 0) {
                 fizzBuzzArr[i] = "Fizz";
             }
             if (currentNum % 5 == 0) {
                 fizzBuzzArr[i] = fizzBuzzArr[i] == null ?
                                  "Buzz" : "FizzBuzz";
+            }
+            if(fizzBuzzArr[i] == null){
+                fizzBuzzArr[i] = String.valueOf(currentNum);
             }
         }
 
